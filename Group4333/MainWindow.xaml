@@ -50,7 +50,10 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <!-- Места для добавления элементов управления -->
+
+<Button Grid.Row="0" 
+        Content="ахметова зарина мяу" 
+        Click="AuthorInfoButton_Click"/>
 
                 <!---->
 
