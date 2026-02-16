@@ -8,56 +8,49 @@
         Title="Инструментальные Средства Разработки Программного Обеспечения" 
         Height="700" 
         Width="800">
-    <Grid>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
 
-            <TextBlock Text="Студенты группы 4333"
+        <StackPanel Grid.Row="0" Margin="0,0,0,20">
+            <TextBlock Text="Информация о студенте" 
+                       FontSize="18" 
+                       FontWeight="Bold" 
                        HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontSize="15px" 
-                       Grid.Row="0" />
+                       Margin="0,0,0,10"/>
 
-            <Grid Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
+            <TextBlock Text="Фамилия: Иванов" FontSize="14"/>
+            <TextBlock Text="Имя: Иван" FontSize="14"/>
+            <TextBlock Text="Возраст: 20 лет" FontSize="14"/>
+            <TextBlock Text="Группа: 4333" FontSize="14"/>
+            <TextBlock Text="Вариант: 1 (Excel)" FontSize="14" FontWeight="Bold"/>
+        </StackPanel>
 
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="📥 Импорт данных из Excel" 
+                    Width="250" Height="40" 
+                    Margin="5"
+                    Click="ImportButton_Click"/>
 
-<Button Grid.Row="0" 
-        Content="ахметова зарина мяу" 
-        Click="AuthorInfoButton_Click"/>
+            <Button Content="📤 Экспорт в Excel" 
+                    Width="250" Height="40" 
+                    Margin="5"
+                    Click="ExportButton_Click"/>
 
-                <!---->
+            <TextBlock x:Name="StatusText" 
+                       Text="Готов к работе" 
+                       Foreground="Gray"
+                       HorizontalAlignment="Center"
+                       Margin="0,20,0,0"/>
+        </StackPanel>
 
-            </Grid>
-        </Grid>
+        <ListBox Grid.Row="2" 
+                 x:Name="ServicesListBox"
+                 Height="150"
+                 DisplayMemberPath="Type"
+                 Margin="0,10,0,0"/>
     </Grid>
 </Window>
